@@ -1,16 +1,22 @@
 import React from 'react'
-
-import ProfileCard from './ProfileCard'
-import ContactCard from './ContactCard'
-import SocialButton from './SocialLink'
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import MainContainer from './MainContainer'
 
 const Home = () => {
   return (
-    <div>
-      {/* <ProfileCard/>
-      <ContactCard/>
-      <SocialButton/> */}
-    </div>
+   <div>
+    <MainContainer/>
+   </div>
+ 
   )
 }
 

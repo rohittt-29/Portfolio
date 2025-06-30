@@ -32,8 +32,8 @@ export default function SocialButton({
   
 
     return (
-        <div className='p-4'>
-       <div className="relative inline-block  rounded-md"
+        <div className=''>
+       <div className="  relative inline-block  rounded-md"
 
             onMouseEnter={() => setIsVisible(true)}
             onMouseLeave={() => setIsVisible(false)}

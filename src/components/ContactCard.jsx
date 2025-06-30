@@ -8,8 +8,8 @@ import {
 
 const ContactCard = () => {
   return (
-    <div className='w-full md:w-1/4 px-4'>
-      <Card className="flex flex-col bg-white dark:bg-black text-black dark:text-white p-4">
+    <div className=' py-4'>
+      <Card className="flex flex-col  bg-white dark:bg-black text-black dark:text-white p-4">
         <CardHeader>
           <CardTitle>Contact Info:</CardTitle>
         </CardHeader>
