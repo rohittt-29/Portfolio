@@ -8,6 +8,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const greetings = [
     { text: "Hello", language: "English" },
+      { text: "नमस्ते ", language: "hindi" },
+       { text: "হ্যালো ", language: "hindi" },
+        { text: "ਸਤ ਸ੍ਰੀ ਅਕਾਲ ", language: "hindi" },
+         { text: "வணக்கம் ", language: "hindi" },
+        { text: "హలో ", language: "hindi" },
+         { text: "مرحبا  ", language: "hindi" },
+       { text: "Привет ", language: "hindi" },
+         { text: "नमस्कार ", language: "hindi" },
     { text: "こんにちは", language: "Japanese" },
     { text: "Bonjour", language: "French" },
     { text: "Hola", language: "Spanish" },
@@ -15,6 +23,7 @@ const greetings = [
     { text: "Ciao", language: "Italian" },
     { text: "Hallo", language: "German" },
     { text: "こんにちは", language: "Japanese" },
+     { text: "Hello", language: "English" },
 ];
 
 const DynamicText = () => {
@@ -50,20 +59,20 @@ const DynamicText = () => {
 
     return (
         <section
-            className="flex min-h-[60px] items-center justify-center gap-1 p-4"
+            className="flex min-h-[40px] items-center justify-center gap-1 "
             aria-label="Rapid greetings in different languages"
         >
-            <div className="relative h-16 w-60 flex items-center justify-center overflow-visible">
+            <div className="relative h-5 w-60 flex  overflow-visible">
                 {isAnimating ? (
                     <AnimatePresence mode="popLayout">
                         <motion.div
                             key={currentIndex}
-                            className="absolute flex items-center gap-2 text-2xl font-medium text-gray-800 dark:text-gray-200"
+                            className="absolute flex items-center gap-2 text-xl font-medium text-gray-800 dark:text-gray-200"
                             aria-live="off"
                             initial={textVariants.hidden}
                             animate={textVariants.visible}
                             exit={textVariants.exit}
-                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            transition={{ duration: 0.3, ease: "easeOut" }}
                         >
                             <div
                                 className="h-2 w-2 rounded-full bg-black dark:bg-white"

@@ -9,11 +9,13 @@ const Body = () => {
   return (
     <div>
       <Navbar/>
-      <div className='flex '>
-      <div className=' p-4 w-1/4' >
+      <div className='flex justify-between '>
+      <div className=' p-4 w-1/4 ' >
       <SideBar/>
       </div>
+      <div className= 'flex-1  ' >
    <Outlet/>
+   </div>
       </div>
      
     </div>

@@ -1,22 +1,20 @@
 import React from 'react'
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import MainContainer from './MainContainer'
+import ProjectSection from './ProjectSection'
 
 const Home = () => {
   return (
-   <div>
-    <MainContainer/>
-   </div>
- 
+    <div >
+      <ProjectSection/>
+      {/* <MainContainer />
+      <MainContainer />
+      <MainContainer />
+      <MainContainer />
+           <MainContainer />
+      <MainContainer />
+           <MainContainer />
+      <MainContainer /> */}
+    </div>
   )
 }
 
