@@ -14,7 +14,7 @@ const MainContainer = ({title , description , image ,buttons,Git_link, live_link
   return (
     <div>
  <div className='  px-4 py-3 '>
-    <Card className="overflow-hidden bg-white dark:bg-black text-black dark:text-white rounded-2xl p-0">
+    <Card className="overflow-hidden bg-white dark:bg-black text-black dark:text-white rounded-2xl md:h-[90vh] p-0">
   <img
     src={image}
     alt={title}

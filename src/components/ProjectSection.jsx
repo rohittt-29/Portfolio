@@ -9,7 +9,7 @@ import { Button } from './ui/button'
     const  projects = [
         {
             title: "Togetha",
-            description: "Togetha is a real-time chat and connection platform. Built for fun interactions, profile swipes, and seamless chatting — all in one slick UI.",
+            description: "Togetha a Modern Dating real-time chat and connection platform. Built for fun interactions, profile swipes, and seamless chatting — all in one slick UI.",
             image: TOGETHA_BG,
             Git_link: "https://github.com/rohittt-29/togetha-ui",
             live_link: "https://togetha-web.vercel.app",
@@ -19,12 +19,12 @@ import { Button } from './ui/button'
         },
               {
             title: "StreamVibe",
-            description: "Togetha is a real-time chat and connection platform. Built for fun interactions, profile swipes, and seamless chatting — all in one slick UI.",
+            description: "A sleek movie streaming platform built with React, Redux, and Firebase. It features real-time authentication, dynamic movie listings using TMDB API, and smart search powered by Gemini AI.",
             image: STREAMVIVE_BG,
             Git_link: "https://github.com/rohittt-29/StreamVibe",
                  live_link: "https://stream-vibe-jet-three.vercel.app",
                         buttons :[
-                "React", "Redux" ,"Tailwind","TMDB API", "Gemini"
+                "React", "Redux" ,"Tailwind","Firebase","TMDB API", "Gemini"
             ]
 
         },

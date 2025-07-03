@@ -19,6 +19,7 @@ const App = () => {
   <Routes>
     <Route path='/' element={<Body/>}>
     {/* <Route path='/navbar' element ={<Navbar/>} /> */}
+     <Route index element={<Home />} />  {/* This makes / render Home */}
     <Route path='/home' element= {<Home/>}/>
        <Route path='/about' element= {<About/>}/>
           <Route path='/contact' element= {<Contact/>}/>

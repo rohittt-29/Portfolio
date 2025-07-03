@@ -1,39 +1,76 @@
 import React from 'react'
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import DynamicText from './DynamicText'
+import { Button } from './ui/button'
+import CommandButton from './kokonutui/command-button'
+
+
 const Aboutsection = () => {
- return (
-     <div className=' py-4'>
-       <Card className="flex flex-col mr-5 bg-white dark:bg-black text-black dark:text-white p-4">
-         <CardHeader>
-           <CardContent className={`w-1/6  `}><DynamicText/></CardContent>
-           {/* <CardTitle className={`text-2xl`}>I’m Rohit Mali </CardTitle> */}
-         </CardHeader>
+  return (
+    <>
+    <div className="py-4">
+      <Card className="bg-white dark:bg-black text-black dark:text-white rounded-2xl shadow-md p-6 mr-4 ml-4 md:ml-0 ">
+        <CardHeader className="space-y-2 text-center">
+          <CardContent className="p-0">
+            <DynamicText />
+            
 
-         <CardContent className=" ">
-          I’m Rohit Mali — just another curious mind trying to make the web a little more usable, fast, and beautiful.
+          </CardContent>
+          <CardTitle className="text-3xl font-bold">I’m Rohit Mali</CardTitle>
+          <p className="text-muted-foreground text-sm">
+            Full Stack Developer • Web Craftsman
+          </p>
+        </CardHeader>
 
-I’m currently pursuing Computer Engineering from Mumbai University, but most of what I’ve learned comes from building things that break — and fixing them at 2AM (the real dev life™).
+        <CardContent className="mt-4 space-y-4 text-[16px] leading-relaxed tracking-wide text-justify">
+          <p>
+            I’m a full stack developer who loves building interactive, scalable, and user-focused web apps. Whether it’s crafting a responsive frontend or setting up a clean backend API — I enjoy being part of the whole journey.
+          </p>
 
-My comfort zone? Building full-stack apps with React, Node.js, Express, and MongoDB — and giving them a visual soul using Figma and Shadcn/UI. I enjoy the sweet spot where code meets design — not just making things work, but making them feel right.
+          <p>
+            I work mainly with React, Node.js, Express, and MongoDB — pairing them with clean UI libraries like Shadcn/UI and Figma to create smooth interfaces. While I’m not a professional UI designer, I enjoy making things look and feel right.
+          </p>
 
-Lately, I’ve been sharpening my problem-solving skills with DSA, and focusing on writing cleaner, reusable, and scalable code.
+          <p>
+            I constantly learn by doing — breaking things, fixing them, and improving along the way. Every project helps me get better at thinking, building, and shipping.
+          </p>
 
-Outside of code, I enjoy simplifying complex ideas and obsessing over the tiny UI details that make a big difference.
-         </CardContent>
-       </Card>
-     </div>
-   )
- }
- 
+          <p>
+            Currently, I’m expanding my skills into areas like TypeScript, PostgreSQL, and better architectural practices to write cleaner and more maintainable codebases.
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+     <div className=' pb-4 '>
+          <Card className="flex flex-col  bg-white dark:bg-black text-black dark:text-white p-4 mr-4">
+            <CardHeader>
+              <CardTitle>Technologies I’ve Worked With</CardTitle>
+            </CardHeader>
+    
+            <CardContent className={` pb-4 flex flex-wrap justify-center gap-4`}>
+       
+              <CommandButton><i className="ri-reactjs-fill mr-2"></i>React.js</CommandButton>
+                <CommandButton><i className="ri-nodejs-fill mr-2"></i>Node.js</CommandButton>
+                  <CommandButton>Express</CommandButton>
+                    <CommandButton>MongoDb</CommandButton>
+                      <CommandButton>Socket.Io</CommandButton>
+                        <CommandButton><i className="ri-tailwind-css-fill mr-2"></i>Tailwind</CommandButton>
+                          <CommandButton>Redux</CommandButton>
+                            <CommandButton><i className="ri-figma-line mr-2"></i>Figma</CommandButton>
+                             <CommandButton><i className="ri-vercel-line mr-2"></i>Vercel</CommandButton>
+                              <CommandButton>Git</CommandButton>
+                               <CommandButton>Zustand</CommandButton>
+          
+            </CardContent>
+          </Card>
+        </div>
+    </>
+  )
+}
 
 export default Aboutsection

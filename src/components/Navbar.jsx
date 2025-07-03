@@ -3,10 +3,13 @@ import { useLocation, Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
 import ParticleButton from './Particle';
+import { useNavigate } from 'react-router-dom';
+import { LOGO } from '@/util/constant';
 
 const Navbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
+  const navigate = useNavigate();
 
   const isActive = (path) => currentPath === path;
 
@@ -17,8 +20,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="p-4 flex justify-between items-center bg-white dark:bg-black text-black dark:text-white  transition-colors duration-300">
-      <h1 className='cursor-pointer text-2xl'>Rohit Mali</h1>
+    <div className="p-2 md:p-4 flex justify-between items-center bg-white dark:bg-black text-black dark:text-white  transition-colors duration-300">
+      <img  onClick={()=>{    if (window.innerWidth < 768) {
+      navigate('/');
+    }}} src={LOGO} className='w-7 h-7 md:w-10 md:h-10' alt="" />
 
       <NavigationMenu>
         <NavigationMenuList className="flex gap-2">

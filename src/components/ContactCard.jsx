@@ -17,9 +17,12 @@ const ContactCard = () => {
         <CardContent className="space-y-2 py-2">
           <div className="flex items-center gap-2">
             <i className=" ri-mail-line " />
-            <span>rm2193352@gmail.com</span>
+     <a href="mailto:rm2193352@gmail.com" className="hover:underline">rm2193352@gmail.com</a>
           </div>
-
+               <div className="flex items-center gap-2">
+         <i className="ri-phone-fill"></i>
+   <a href="tel:+917977453422" className="hover:underline">+91 7977453422</a>
+          </div>
           <div className="flex items-center gap-2">
             <i className="ri-map-pin-2-line" />
             <span>Mumbai, India</span>
