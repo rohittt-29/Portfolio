@@ -1,5 +1,5 @@
 import Togetha from "../components/assets/Togetha.png"
-import Streamvibe from "../components/assets/Streamvibe.png"
+import Streamvibe from "../components/assets/StreamVibe.png"
 import Dash3 from "../components/assets/Dash3.png"
 import Logo from "../components/assets/Logo.svg"
 import Profile from "../components/assets/Profile.jpg"
