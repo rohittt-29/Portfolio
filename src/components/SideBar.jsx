@@ -1,5 +1,5 @@
 import React from 'react'
-import ProfileCard from './Profilecard'
+import ProfileCard from './ProfileCard'
 import ContactCard from './ContactCard'
 import SocialButton from './SocialLink'
 import MainContainer from './MainContainer'
