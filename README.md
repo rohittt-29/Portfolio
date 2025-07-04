@@ -1,12 +1,52 @@
-# React + Vite
+# 💼 Rohit Mali - Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hey there! I'm Rohit Mali — a Full Stack Developer who loves building clean, responsive, and interactive web apps.  
+This is my personal portfolio site built to showcase my projects, skills, and ways to connect with me.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
+👉 [Visit Portfolio](https://rohit-mali-portfolio.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend:** React.js, Tailwind CSS, Shadcn/UI
+- **Routing:** React Router
+- **Animations:** Framer Motion
+- **Icons:** RemixIcon
+- **Hosting:** Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+- Dark & Light Theme Toggle
+- Responsive UI across all devices
+- Reusable Components
+- Tech Stack Cards
+- Dynamic Text Animations
+- Contact Section with Mail Integration
+- Sidebar + Navigation Menu
+
+
+## 🚀 Setup Instructions
+
+1. Clone the repo  
+   `git clone https://github.com/rohittt-29/Portfolio.git`
+
+2. Navigate to the folder  
+   `cd portfolio`
+
+3. Install dependencies  
+   `npm install`
+
+4. Run locally  
+   `npm run dev`
+
+---
+
+## 📬 Contact Me
+
+- Email: rm2193352@gmail.com  
+- LinkedIn: [Rohit Mali](https://www.linkedin.com/in/rohit-mali-163267257)  
+- Portfolio: [rohittmali.vercel.app](https://rohit-mali-portfolio.vercel.app)
+
+---
+
+A personal space crafted to reflect my journey — where code meets clarity.
