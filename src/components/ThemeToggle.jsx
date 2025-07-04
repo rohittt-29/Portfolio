@@ -18,9 +18,9 @@ const ThemeToggle = ()=>{
     <div>
       <button className=" rounded-full cursor-pointer p-2 " onClick={toggleTheme}>
         {theme === "dark" ? (
-          <i className="ri-sun-fill text-xl"></i>
+         <i className="ri-moon-line text-xl"></i>
         ) : (
-          <i className="ri-moon-line text-xl"></i>
+        <i className="ri-sun-fill text-xl"></i>
         )}
       </button>
     </div>
@@ -30,6 +30,4 @@ const ThemeToggle = ()=>{
 
 
 export default ThemeToggle;
-
-
 
