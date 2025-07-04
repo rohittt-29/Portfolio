@@ -45,7 +45,7 @@ This is my personal portfolio site built to showcase my projects, skills, and wa
 
 - Email: rm2193352@gmail.com  
 - LinkedIn: [Rohit Mali](https://www.linkedin.com/in/rohit-mali-163267257)  
-- Portfolio: [rohittmali.vercel.app](https://rohit-mali-portfolio.vercel.app)
+- Portfolio: [rohit-mali-portfolio.vercel.app](https://rohit-mali-portfolio.vercel.app)
 
 ---
 
