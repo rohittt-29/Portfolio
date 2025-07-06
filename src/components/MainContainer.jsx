@@ -14,15 +14,15 @@ const MainContainer = ({title , description , image ,buttons,Git_link, live_link
   return (
     <div>
  <div className='  px-4 py-3 '>
-    <Card className="overflow-hidden bg-white dark:bg-black text-black dark:text-white rounded-2xl md:h-[90vh] p-0">
+    <Card className="overflow-hidden bg-white dark:bg-black text-black dark:text-white rounded-2xl  p-0">
 <img
   src={image}
   alt={title}
-  className="w-full h-60 md:h-[90vh] object-cover rounded-t-2xl"
+  className="w-full h-60 md:h-[40vh] object-cover rounded-t-2xl"
 />
 
 
-  <div className="px-4   text-center">
+  <div className="px-4   text-center ">
     <CardTitle className="text-2xl">{title}</CardTitle>
     <CardDescription>{description}</CardDescription>
   </div>
