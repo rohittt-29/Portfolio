@@ -62,7 +62,7 @@ const ProfileCard = () => {
   <CardFooter className={`flex justify-center`}>
    <a href="/resume.pdf"
    target='_blank'
-   rel="noopener noreferrer"><Button className={`cursor-pointer`} variant="outline"><i class="ri-attachment-2"></i>Resume</Button></a>
+   rel="noopener noreferrer"><Button className={`cursor-pointer`} variant="outline"><i className="ri-attachment-2"></i>Resume</Button></a>
   </CardFooter>
 </Card>
     </div>
