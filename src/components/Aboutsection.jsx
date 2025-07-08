@@ -47,7 +47,7 @@ const Aboutsection = () => {
       </Card>
     </div>
      <div className=' pb-4 '>
-          <Card className="flex flex-col  bg-white dark:bg-black text-black dark:text-white p-4 mr-4">
+          <Card className="flex flex-col  bg-white dark:bg-black text-black dark:text-white p-4 ml-4 md:ml-0 mr-4">
             <CardHeader>
               <CardTitle>Technologies I’ve Worked With</CardTitle>
             </CardHeader>
