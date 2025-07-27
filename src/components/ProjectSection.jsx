@@ -22,7 +22,7 @@ import { Button } from './ui/button'
             description: "A sleek movie streaming platform built with React, Redux, and Firebase. It features real-time authentication, dynamic movie listings using TMDB API, and smart search powered by Gemini AI.",
             image: STREAMVIVE_BG,
             Git_link: "https://github.com/rohittt-29/StreamVibe",
-                 live_link: "https://stream-vibe-jet-three.vercel.app",
+                 live_link: "https://stream-vibe-20.vercel.app",
                         buttons :[
                 "React", "Redux" ,"Tailwind","Firebase","TMDB API", "Gemini"
             ]
