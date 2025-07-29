@@ -9,31 +9,38 @@ import {
 const ContactCard = () => {
   return (
     <div className=' py-4'>
-      <Card className="flex flex-col  bg-white dark:bg-black text-black dark:text-white p-4">
-        <CardHeader>
-          <CardTitle>Contact Info:</CardTitle>
-        </CardHeader>
+      <Card className="w-full max-w-md bg-white dark:bg-black text-black dark:text-white p-4">
+  <CardHeader>
+    <CardTitle className="text-base sm:text-lg">Contact Info:</CardTitle>
+  </CardHeader>
 
-        <CardContent className="space-y-2 py-2">
-          <div className="flex items-center gap-2">
-            <i className=" ri-mail-line " />
-     <a href="mailto:rm2193352@gmail.com" className="hover:underline">rm2193352@gmail.com</a>
-          </div>
-               <div className="flex items-center gap-2">
-         <i className="ri-phone-fill"></i>
-   <a href="tel:+917977453422" className="hover:underline">+91 7977453422</a>
-          </div>
-          <div className="flex items-center gap-2">
-            <i className="ri-map-pin-2-line" />
-            <span>Mumbai, India</span>
-          </div>
+  <CardContent className="space-y-2 py-2  break-words text-sm sm:text-base">
+    <div className="flex items-start gap-2">
+      <i className="ri-mail-line text-xl" />
+      <a href="mailto:rm2193352@gmail.com" className="hover:underline break-all truncate">
+        rm2193352@gmail.com
+      </a>
+    </div>
 
-          <div className="flex items-center gap-2">
-            <i className="ri-calendar-line" />
-            <span>Available for Hire</span>
-          </div>
-        </CardContent>
-      </Card>
+    <div className="flex items-start gap-2">
+      <i className="ri-phone-fill text-xl" />
+      <a href="tel:+917977453422" className="hover:underline break-all truncate">
+        +91 7977453422
+      </a>
+    </div>
+
+    <div className="flex items-start gap-2">
+      <i className="ri-map-pin-2-line text-xl" />
+      <span>Mumbai, India</span>
+    </div>
+
+    <div className="flex items-start gap-2">
+      <i className="ri-calendar-line text-xl" />
+      <span>Available for Hire</span>
+    </div>
+  </CardContent>
+</Card>
+
     </div>
   )
 }
