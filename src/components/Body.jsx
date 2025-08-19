@@ -1,39 +1,25 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Home from './Home';
 import Footer from './Footer';
+import { isMobile } from 'react-device-detect';
 
 const Body = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  // ✅ Safe device check using screen size at load
-  const [isMobileDevice, setIsMobileDevice] = useState(false);
-
-  useEffect(() => {
-    const checkDevice = () => {
-      // Agar screen width < 768 pe load hua → mobile मान
-      setIsMobileDevice(window.innerWidth < 768 && /Mobi|Android/i.test(navigator.userAgent));
-    };
-
-    checkDevice();
-    window.addEventListener("resize", checkDevice);
-
-    return () => window.removeEventListener("resize", checkDevice);
-  }, []);
-
-  // Check if it's root path
+  // Root path check
   const isRootPath = currentPath === '/';
 
   // Sidebar logic
-  const showSidebar = isMobileDevice 
-    ? isRootPath  // Mobile → sirf root pe sidebar
-    : (isRootPath || window.innerWidth >= 768); // Desktop → normal logic
+  const showSidebar = isMobile 
+    ? isRootPath   // Agar mobile device hai → mobile layout
+    : (isRootPath || window.innerWidth >= 768); // Agar asli desktop hai → normal layout
 
   // Home logic
-  const shouldShowHome = isRootPath && (isMobileDevice ? true : window.innerWidth >= 768);
+  const shouldShowHome = isRootPath && (isMobile ? true : window.innerWidth >= 768);
 
   return (
     <div>
