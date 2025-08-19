@@ -4,7 +4,6 @@ import Navbar from './Navbar';
 import SideBar from './SideBar';
 import Home from './Home';
 import Footer from './Footer';
-import { isMobile } from 'react-device-detect';
 
 const Body = () => {
   const location = useLocation();
@@ -13,21 +12,22 @@ const Body = () => {
   // Root path check
   const isRootPath = currentPath === '/';
 
-  // Sidebar logic
-  const showSidebar = isMobile 
-    ? isRootPath   // Agar mobile device hai → mobile layout
-    : (isRootPath || window.innerWidth >= 768); // Agar asli desktop hai → normal layout
-
-  // Home logic
-  const shouldShowHome = isRootPath && (isMobile ? true : window.innerWidth >= 768);
+  // Home logic: show Home component only on root + desktop
+  const shouldShowHome = isRootPath;
 
   return (
     <div>
       <Navbar />
+
       <div className="md:flex md:justify-between">
-        {/* Sidebar */}
-        <div className={`p-4 md:w-1/4 ${showSidebar ? 'block' : 'hidden'}`}>
-          <SideBar />
+        {/* ✅ Mobile Sidebar */}
+        <div className={`p-4 w-full block md:hidden`}>
+          {isRootPath && <SideBar />}
+        </div>
+
+        {/* ✅ Desktop Sidebar */}
+        <div className={`p-4 md:w-1/4 hidden md:block`}>
+          {(isRootPath || true) && <SideBar />}
         </div>
 
         {/* Main Content */}
@@ -35,6 +35,7 @@ const Body = () => {
           {shouldShowHome ? <Home /> : <Outlet />}
         </div>
       </div>
+
       <Footer />
     </div>
   );
