@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import SideBar from './SideBar';
@@ -9,29 +9,38 @@ const Body = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  // Device check
-  const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
+  // ✅ Safe device check using screen size at load
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
 
-  // This checks if screen width is md or larger (>=768px)
-  const isMdUp = window.matchMedia('(min-width: 768px)').matches;
+  useEffect(() => {
+    const checkDevice = () => {
+      // Agar screen width < 768 pe load hua → mobile मान
+      setIsMobileDevice(window.innerWidth < 768 && /Mobi|Android/i.test(navigator.userAgent));
+    };
 
-  // Root path check
+    checkDevice();
+    window.addEventListener("resize", checkDevice);
+
+    return () => window.removeEventListener("resize", checkDevice);
+  }, []);
+
+  // Check if it's root path
   const isRootPath = currentPath === '/';
 
   // Sidebar logic
   const showSidebar = isMobileDevice 
-    ? isRootPath // agar mobile device hai, to sirf root path pe sidebar dikhao
-    : (isRootPath || isMdUp); // agar desktop hai, to normal logic follow karo
+    ? isRootPath  // Mobile → sirf root pe sidebar
+    : (isRootPath || window.innerWidth >= 768); // Desktop → normal logic
 
   // Home logic
-  const shouldShowHome = isRootPath && (isMobileDevice ? true : isMdUp);
+  const shouldShowHome = isRootPath && (isMobileDevice ? true : window.innerWidth >= 768);
 
   return (
     <div>
       <Navbar />
       <div className="md:flex md:justify-between">
         {/* Sidebar */}
-        <div className={`p-4 md:w-1/4 ${showSidebar ? 'block' : 'hidden'} md:block`}>
+        <div className={`p-4 md:w-1/4 ${showSidebar ? 'block' : 'hidden'}`}>
           <SideBar />
         </div>
 
