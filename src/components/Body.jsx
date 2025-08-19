@@ -9,30 +9,38 @@ const Body = () => {
   const location = useLocation();
   const currentPath = location.pathname;
 
+  // Device check
+  const isMobileDevice = /Mobi|Android/i.test(navigator.userAgent);
+
   // This checks if screen width is md or larger (>=768px)
   const isMdUp = window.matchMedia('(min-width: 768px)').matches;
 
-  // Check if it's the root path
+  // Root path check
   const isRootPath = currentPath === '/';
 
-  const shouldShowHome = isRootPath && isMdUp;
+  // Sidebar logic
+  const showSidebar = isMobileDevice 
+    ? isRootPath // agar mobile device hai, to sirf root path pe sidebar dikhao
+    : (isRootPath || isMdUp); // agar desktop hai, to normal logic follow karo
+
+  // Home logic
+  const shouldShowHome = isRootPath && (isMobileDevice ? true : isMdUp);
 
   return (
     <div>
       <Navbar />
-      <div className='md:flex md:justify-between'>
-        {/* Sidebar: show on all screen sizes when on root, or md+ for all */}
-        <div className={`p-4 md:w-1/4 ${isRootPath || isMdUp ? 'block' : 'hidden'} md:block`}>
+      <div className="md:flex md:justify-between">
+        {/* Sidebar */}
+        <div className={`p-4 md:w-1/4 ${showSidebar ? 'block' : 'hidden'} md:block`}>
           <SideBar />
         </div>
 
         {/* Main Content */}
-        <div className='flex-1'>
+        <div className="flex-1">
           {shouldShowHome ? <Home /> : <Outlet />}
         </div>
       </div>
-      
-      <Footer/>
+      <Footer />
     </div>
   );
 };
