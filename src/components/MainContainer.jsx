@@ -13,7 +13,7 @@ import { Key } from 'lucide-react'
 const MainContainer = ({title , description , image ,buttons,Git_link, live_link }) =>  {
   return (
     <div>
- <div className='  px-4 py-3 '>
+ <div className='  px-4  '>
     <Card className="overflow-hidden bg-white dark:bg-black text-black dark:text-white rounded-2xl  p-0">
 <img
   src={image}
@@ -27,17 +27,17 @@ const MainContainer = ({title , description , image ,buttons,Git_link, live_link
     <CardDescription>{description}</CardDescription>
   </div>
 
-  <CardContent className="flex justify-center px-4 ">
-    <div className="flex flex-wrap justify-center  p-2 w-4/5">
+  <CardContent className="flex justify-center px-4">
+    <div className="flex flex-wrap justify-center gap-2 p-2 w-full">
       {buttons?.map((tech ,index)=>(
-        <Button key={index} variant="default" className={`m-2 `}>{tech}</Button>
+        <Button key={index} variant="default" className="text-xs sm:text-sm">{tech}</Button>
       ))}
     </div>
   </CardContent>
 
-  <CardFooter className="flex  pb-4 ">
-    <a href={Git_link}><Button className="cursor-pointer" variant="outline"><i className="ri-github-line text-lg"></i>GitHub</Button></a>
-  <a href={live_link}>  <Button className="cursor-pointer mx-4" variant="outline"><i className="ri-arrow-right-s-line  text-lg"></i> Live</Button></a>
+  <CardFooter className="flex flex-col sm:flex-row gap-2 justify-center pb-4">
+    <a href={Git_link}><Button className="cursor-pointer w-full sm:w-auto" variant="outline"><i className="ri-github-line text-lg"></i>GitHub</Button></a>
+    <a href={live_link}><Button className="cursor-pointer w-full sm:w-auto" variant="outline"><i className="ri-arrow-right-s-line  text-lg"></i> Live</Button></a>
   </CardFooter>
 </Card>
 

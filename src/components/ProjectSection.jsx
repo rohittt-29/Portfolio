@@ -1,4 +1,4 @@
-import { DASH3_BG, STREAMVIVE_BG, TOGETHA_BG } from '@/util/constant'
+import { DASH3_BG, PORT_BG, STREAMVIVE_BG, TOGETHA_BG } from '@/util/constant'
 
 import React from 'react'
 import MainContainer from './MainContainer'
@@ -37,11 +37,20 @@ import { Button } from './ui/button'
                             buttons :[
                 "React","tailwind","Coingecko Api", "Chart.js"
             ]
-        }
+        },
+      {
+   title: "Portfolio Website",
+   description: "A clean and responsive portfolio website to showcase my projects, skills, and experience. Built with React and Tailwind CSS, featuring smooth animations and hosted on Vercel",
+   image: PORT_BG, // ek screenshot daal dena
+   Git_link: "https://github.com/rohittt-29/portfolio", 
+   live_link: "https://rohitmalii.vercel.app",
+   buttons: ["React", "ShadCN", "KokonutUI", "Vercel"]
+}
+
     ]
     const ProjectSection = () => {
   return (
-    <div className='grid grid-cols-1 sm:grid-cols-2  p-2'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2'>
       {projects.map((proj ,index)=>(
         <MainContainer key={index} title={proj.title}
           description={proj.description}

@@ -44,19 +44,16 @@ const ProfileCard = () => {
     <CardDescription>FullStack Developer</CardDescription>
  
   </CardHeader>
-  <CardContent className={`flex justify-center `}>
-    <div className='flex flex-wrap gap-2 justify-center'>
-            <CommandButton><i className="ri-reactjs-fill mr-2"></i>React.js</CommandButton>
-                    <CommandButton><i className="ri-nodejs-fill mr-2"></i>Node.js</CommandButton>
-                      <CommandButton>Express</CommandButton>
-                        <CommandButton>MongoDb</CommandButton>
-                       
-                            <CommandButton><i className="ri-tailwind-css-fill mr-2"></i>Tailwind</CommandButton>
-                              <CommandButton>Redux</CommandButton>
-                                <CommandButton>Figma</CommandButton>
-                           
-                                
-                        </div>
+  <CardContent className="flex justify-center">
+    <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
+      <CommandButton className="text-xs sm:text-sm"><i className="ri-reactjs-fill mr-1 sm:mr-2"></i>React.js</CommandButton>
+      <CommandButton className="text-xs sm:text-sm"><i className="ri-nodejs-fill mr-1 sm:mr-2"></i>Node.js</CommandButton>
+      <CommandButton className="text-xs sm:text-sm">Express</CommandButton>
+      <CommandButton className="text-xs sm:text-sm">MongoDb</CommandButton>
+      <CommandButton className="text-xs sm:text-sm"><i className="ri-tailwind-css-fill mr-1 sm:mr-2"></i>Tailwind</CommandButton>
+      <CommandButton className="text-xs sm:text-sm">Redux</CommandButton>
+      <CommandButton className="text-xs sm:text-sm">Figma</CommandButton>
+    </div>
                        
   </CardContent>
   <CardFooter className={`flex justify-center`}>
