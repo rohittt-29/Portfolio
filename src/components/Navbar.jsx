@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="p-2 md:p-4 flex justify-between items-center bg-white dark:bg-black text-black dark:text-white  transition-colors duration-300">
+    <div className="p-2 md:p-4 flex justify-between items-center bg-white dark:bg-black/0 text-black dark:text-white  transition-colors duration-300">
       <img  onClick={()=>{    if (window.innerWidth < 768) {
       navigate('/');
     }}} src={LOGO} className='w-7 h-7 md:w-10 md:h-10' alt="" />
