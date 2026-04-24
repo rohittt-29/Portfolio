@@ -1,4 +1,4 @@
-import { DASH3_BG, PORT_BG, STREAMVIVE_BG, TOGETHA_BG } from '@/util/constant'
+import { BRAINBOX_BG, DASH3_BG, PORT_BG, STREAMVIVE_BG, TOGETHA_BG } from '@/util/constant'
 
 import React from 'react'
 import MainContainer from './MainContainer'
@@ -7,6 +7,23 @@ import { Button } from './ui/button'
 
 
     const  projects = [
+      {
+    title: "BrainBox AI",
+    description: "An intelligent note-taking and knowledge management platform. Features an integrated AI chatbot using RAG (Retrieval-Augmented Generation) and MongoDB Vector Search to instantly find and converse about your saved notes and links.",
+    image: BRAINBOX_BG, // Make sure to import your BrainBox image at the top of the file
+    Git_link: "https://github.com/rohittt-29/Brain-box",
+    live_link: "https://brain-box1.vercel.app/login", // Update with your actual live Vercel link
+    buttons: [
+        "React", 
+        "Redux", 
+        "Node.js", 
+        "MongoDB Vector Search", 
+        "Gemini AI", 
+        "TailwindCSS"
+    ]
+},
+
+       
         {
             title: "Togetha",
             description: "Togetha a Modern Dating real-time chat and connection platform. Built for fun interactions, profile swipes, and seamless chatting — all in one slick UI.",
