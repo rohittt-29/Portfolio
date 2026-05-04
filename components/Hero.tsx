@@ -56,7 +56,7 @@ export default function Hero() {
           Rohit Mali
         </h1>
         <p className="text-sm text-[#888888] mb-6">
-          Full Stack Developer &nbsp;·&nbsp; Pune, India
+          Full Stack Developer
         </p>
       </motion.div>
 
