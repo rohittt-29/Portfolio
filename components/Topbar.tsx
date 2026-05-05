@@ -46,40 +46,37 @@ export default function Topbar() {
 
   return (
     <header className="topbar fixed top-0 left-0 right-0 z-50">
-      <div
-        className="mx-auto flex items-center justify-between px-5 sm:px-6 h-10"
-        style={{ maxWidth: '750px' }}
-      >
+      <div className="flex items-center justify-between px-6 sm:px-10 h-11">
         {/* ── Left: theme toggle · city · temp ── */}
-        <div className="flex items-center gap-2 text-xs topbar-muted">
+        <div className="flex items-center gap-2.5 text-sm topbar-muted">
           {/* Theme toggle */}
           {mounted && (
             <button
               onClick={() => setTheme(isDark ? 'light' : 'dark')}
               aria-label="Toggle theme"
-              className="topbar-btn p-1 rounded-md transition-colors duration-200"
+              className="topbar-btn p-1.5 rounded-md transition-colors duration-200"
             >
-              {isDark ? <Sun size={13} /> : <Moon size={13} />}
+              {isDark ? <Sun size={15} /> : <Moon size={15} />}
             </button>
           )}
 
           <span className="topbar-dot select-none">·</span>
-          <span>Mumbai</span>
+          <span className="font-medium">Mumbai</span>
 
           {temp !== null && (
             <>
               <span className="topbar-dot select-none">·</span>
-              <span>{temp}°C</span>
+              <span className="font-medium">{temp}°C</span>
             </>
           )}
         </div>
 
         {/* ── Right: IST time ── */}
-        <div className="flex items-center gap-2 text-xs topbar-muted">
+        <div className="flex items-center gap-2.5 text-sm topbar-muted">
           {time && (
             <>
-              <span className="tabular-nums tracking-tight">{time}</span>
-              <span className="topbar-dot">GMT+5:30</span>
+              <span className="tabular-nums tracking-tight font-medium">{time}</span>
+              <span className="topbar-dot text-xs">IST</span>
             </>
           )}
         </div>

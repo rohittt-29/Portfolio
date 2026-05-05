@@ -26,19 +26,18 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 32px 32px;
-  pointer-events: none;
-  z-index: 0;
-}
-
+/* Grid is rendered via canvas in page.tsx for scroll-shine effect */
 main {
   position: relative;
   z-index: 1;
+}
+
+/* ─── Scroll-shine grid canvas ───────────────────── */
+.grid-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 /* ─── Light theme overrides ─────────────────────── */
@@ -49,9 +48,8 @@ main {
   color: #111111;
 }
 
-[data-theme="light"] body::before {
-  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-}
+/* light grid is handled by canvas */
+[data-theme="light"] .grid-canvas { opacity: 0.7; }
 
 /* Cards / surfaces */
 [data-theme="light"] .bg-\[\#111111\]   { background-color: #ffffff !important; }
@@ -103,6 +101,12 @@ main {
 /* Scrollbar */
 [data-theme="light"] ::-webkit-scrollbar-track { background: #fafafa; }
 [data-theme="light"] ::-webkit-scrollbar-thumb { background: #d0d0d0; }
+
+/* GitHub card */
+[data-theme="light"] .github-card {
+  background-color: #f6f6f6;
+  border-color: #e0e0e0;
+}
 
 /* ─── Topbar styles ─────────────────────────────── */
 .topbar {
@@ -162,6 +166,12 @@ main {
   border: none;
   border-top: 1px solid #1a1a1a;
   margin: 3rem 0;
+}
+
+/* ─── GitHub Activity Card ───────────────────────── */
+.github-card {
+  background-color: #0e0e0e;
+  border: 1px solid #1a1a1a;
 }
 
 /* ─── Tech marquee ───────────────────────────────── */
