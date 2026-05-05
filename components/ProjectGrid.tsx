@@ -18,7 +18,7 @@ const projects: Project[] = [
       'Intelligent note-taking platform with an AI chatbot powered by RAG and MongoDB Vector Search — ask questions about your own saved notes.',
     image: '/Brain-box.png',
     gitLink: 'https://github.com/rohittt-29/Brain-box',
-    liveLink: 'https://brain-box1.vercel.app/login',
+    liveLink: 'https://brain-box1.vercel.app',
     tags: ['React', 'Redux', 'Node.js', 'MongoDB', 'Gemini AI', 'Tailwind'],
     isLive: true,
   },
