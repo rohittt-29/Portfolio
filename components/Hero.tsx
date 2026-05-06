@@ -39,11 +39,12 @@ export default function Hero() {
         variants={fadeUp}
         className="mb-6"
       >
-        <div className="relative w-16 h-16 rounded-full overflow-hidden border border-[#2a2a2a]">
+        <div className="relative w-20 h-20 rounded-full overflow-hidden border border-[#2a2a2a]">
           <Image
-            src="/Profile.jpg"
+            src="/Profile.png"
             alt="Rohit Mali"
             fill
+            sizes="200px"
             className="object-cover"
             priority
           />
