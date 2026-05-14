@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useTheme } from 'next-themes';
-import { Sun, Moon } from 'lucide-react';
+import Image from 'next/image';
 
 /* ─── IST clock helper ───────────────────────────── */
 function getIST(): string {
@@ -18,8 +18,9 @@ function getIST(): string {
 export default function Topbar() {
   const [time, setTime] = useState('');
   const [temp, setTemp] = useState<number | null>(null);
-  const { theme, setTheme, resolvedTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   /* avoid hydration mismatch */
   useEffect(() => {
@@ -39,10 +40,21 @@ export default function Topbar() {
         const t = d?.current_weather?.temperature;
         if (typeof t === 'number') setTemp(Math.round(t));
       })
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   const isDark = resolvedTheme === 'dark';
+
+  const handleToggle = useCallback(() => {
+    setIsAnimating(true);
+    // Short delay so the spin animation plays before the icon swaps
+    setTimeout(() => {
+      setTheme(isDark ? 'light' : 'dark');
+    }, 200);
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 400);
+  }, [isDark, setTheme]);
 
   return (
     <header className="topbar fixed top-0 left-0 right-0 z-50">
@@ -52,11 +64,39 @@ export default function Topbar() {
           {/* Theme toggle */}
           {mounted && (
             <button
-              onClick={() => setTheme(isDark ? 'light' : 'dark')}
+              onClick={handleToggle}
               aria-label="Toggle theme"
-              className="topbar-btn p-1.5 rounded-md transition-colors duration-200"
+              className="rounded-full relative flex items-center justify-center cursor-pointer"
+              style={{ width: 36, height: 36 }}
             >
-              {isDark ? <Sun size={15} /> : <Moon size={15} />}
+              {/* Animated glow ring */}
+              <span
+                className="absolute inset-0 rounded-full animate-pulse"
+                style={{
+                  background: isDark
+                    ? 'radial-gradient(circle, rgba(160,190,255,0.25) 0%, transparent 70%)'
+                    : 'radial-gradient(circle, rgba(255,180,50,0.3) 0%, transparent 70%)',
+                  transform: 'scale(1.6)',
+                }}
+              />
+              <Image
+                src={isDark ? '/Moon.png' : '/Sun.png'}
+                alt={isDark ? 'Moon – switch to light mode' : 'Sun – switch to dark mode'}
+                width={36}
+                height={36}
+                className="rounded-full object-cover select-none pointer-events-none relative z-10"
+                style={{
+                  filter: isDark
+                    ? 'drop-shadow(0 0 8px rgba(160,190,255,0.6))'
+                    : 'drop-shadow(0 0 8px rgba(255,160,50,0.7))',
+                  transition: 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease',
+                  transform: isAnimating
+                    ? 'rotate(360deg) scale(0.5)'
+                    : 'rotate(0deg) scale(1)',
+                  opacity: isAnimating ? 0.3 : 1,
+                }}
+                draggable={false}
+              />
             </button>
           )}
 
@@ -84,3 +124,5 @@ export default function Topbar() {
     </header>
   );
 }
+
+
