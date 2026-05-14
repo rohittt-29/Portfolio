@@ -80,7 +80,7 @@ export default function Topbar() {
                 }}
               />
               <Image
-                src={isDark ? '/Moon.png' : '/Sun.png'}
+                src={isDark ? '/moon.png' : '/Sun.png'}
                 alt={isDark ? 'Moon – switch to light mode' : 'Sun – switch to dark mode'}
                 width={36}
                 height={36}
