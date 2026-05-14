@@ -67,7 +67,7 @@ export default function Topbar() {
               onClick={handleToggle}
               aria-label="Toggle theme"
               className="rounded-full relative flex items-center justify-center cursor-pointer"
-              style={{ width: 36, height: 36 }}
+              style={{ width: 26, height: 26 }}
             >
               {/* Animated glow ring */}
               <span
@@ -80,7 +80,7 @@ export default function Topbar() {
                 }}
               />
               <Image
-                src={isDark ? '/moon.png' : '/Sun.png'}
+                src={isDark ? '/moon.png' : '/sun.png'}
                 alt={isDark ? 'Moon – switch to light mode' : 'Sun – switch to dark mode'}
                 width={36}
                 height={36}
