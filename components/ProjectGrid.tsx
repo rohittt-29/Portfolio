@@ -13,6 +13,16 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'GetServe AI',
+    description:
+      'AI-powered WhatsApp ordering system for restaurants with a voice calling agent — customers order in Hindi/Hinglish via WhatsApp or phone call, payments handled automatically via Razorpay',
+    image: '/getServe.png',
+    gitLink: 'https://github.com/rohittt-29/Restaurant-Dashboard',
+    liveLink: 'https://getserveai.vercel.app/',
+    tags: ['Node.js', 'Express', 'MongoDB', 'Socket.io', 'Twilio', 'Grok AI', 'Razorpay', 'Deepgram'],
+    isLive: true,
+  },
+  {
     title: 'BrainBox AI',
     description:
       'Intelligent note-taking platform with an AI chatbot powered by RAG and MongoDB Vector Search — ask questions about your own saved notes.',
