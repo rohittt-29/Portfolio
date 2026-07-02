@@ -13,7 +13,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: 'GetServe AI',
+    title: 'Serve AI',
     description:
       'AI-powered WhatsApp ordering system for restaurants with a voice calling agent — customers order in Hindi/Hinglish via WhatsApp or phone call, payments handled automatically via Razorpay',
     image: '/getServe.png',
