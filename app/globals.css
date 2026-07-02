@@ -56,12 +56,17 @@ main {
 [data-theme="light"] .bg-\[\#0e0e0e\]   { background-color: #f6f6f6 !important; }
 [data-theme="light"] .bg-\[\#0a0a0a\]   { background-color: #f0f0f0 !important; }
 [data-theme="light"] .bg-\[\#1a1a1a\]   { background-color: #ebebeb !important; }
+/* Missing dark bg shades used in new cards */
+[data-theme="light"] .bg-\[\#151515\]   { background-color: #f0f0f0 !important; }
+[data-theme="light"] .bg-\[\#0d0d0d\]   { background-color: #f6f6f6 !important; }
 
 /* Borders */
 [data-theme="light"] .border-\[\#1a1a1a\] { border-color: #e0e0e0 !important; }
 [data-theme="light"] .border-\[\#2a2a2a\] { border-color: #d0d0d0 !important; }
 [data-theme="light"] .border-\[\#222222\] { border-color: #e4e4e4 !important; }
 [data-theme="light"] .border-\[\#3a3a3a\] { border-color: #c8c8c8 !important; }
+/* Missing border shades used in achievement cards */
+[data-theme="light"] .border-\[\#1f1f1f\] { border-color: #e0e0e0 !important; }
 
 /* Text */
 [data-theme="light"] .text-\[\#e8e8e8\]  { color: #111111 !important; }
@@ -71,6 +76,8 @@ main {
 [data-theme="light"] .text-\[\#666666\]  { color: #555555 !important; }
 [data-theme="light"] .text-\[\#555555\]  { color: #666666 !important; }
 [data-theme="light"] .text-\[\#444444\]  { color: #777777 !important; }
+/* Missing text shades */
+[data-theme="light"] .text-\[\#383838\]  { color: #888888 !important; }
 
 /* Marquee pills */
 [data-theme="light"] .animate-marquee span {
@@ -209,6 +216,7 @@ main {
   border-radius: 0.75rem;
   padding: 1px;
   background: #1a1a1a;
+  transition: background 0.3s ease;
 }
 
 .project-card-wrap::before {
@@ -245,7 +253,36 @@ main {
   border-radius: calc(0.75rem - 1px);
   background: #111111;
   overflow: hidden;
-  transition: background 0.2s ease;
+  transition: background 0.3s ease;
+}
+
+/* ── Light mode overrides for project cards ── */
+[data-theme="light"] .project-card-wrap {
+  background: #c8c8c8;  /* slightly stronger border line */
+}
+[data-theme="light"] .project-card-inner {
+  background: #f0f0f0;  /* warm light-gray — not stark white */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+[data-theme="light"] .project-card-wrap:hover .project-card-inner {
+  background: #ebebeb;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Gradient overlay: keep dark gradient in light mode too */
+[data-theme="light"] .project-img-overlay {
+  background: linear-gradient(to top, #111111, transparent) !important;
+  opacity: 1;
+}
+
+/* LIVE badge: swap dark backdrop to a light frosted look */
+[data-theme="light"] .live-badge {
+  background: rgba(250, 250, 250, 0.85) !important;
+  border-color: #d0d0d0 !important;
+  color: #16a34a !important;
+}
+[data-theme="light"] .live-badge .live-dot {
+  background-color: #16a34a !important;
 }
 /* ─── Achievement card shine-border ─────────────── */
 @keyframes spin-border {
@@ -302,9 +339,14 @@ main {
   z-index: 1;
   border-radius: calc(0.75rem - 1px);
   background: #0d0d0d;
-  transition: background 0.2s ease;
+  transition: background 0.3s ease;
 }
 
 .achievement-card-wrap:hover .achievement-card-inner {
   background: #111111;
 }
+
+/* ── Light mode overrides for achievement cards ── */
+[data-theme="light"] .achievement-card-wrap               { background: #d8d8d8; }
+[data-theme="light"] .achievement-card-inner              { background: #ffffff; }
+[data-theme="light"] .achievement-card-wrap:hover .achievement-card-inner { background: #f5f5f5; }

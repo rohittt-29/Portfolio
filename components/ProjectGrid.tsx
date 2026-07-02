@@ -95,11 +95,11 @@ export default function ProjectGrid() {
                   className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
                 />
                 {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
+                <div className="project-img-overlay absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
 
                 {/* LIVE badge */}
                 {project.isLive && (
-                  <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-[#0a0a0a]/80 backdrop-blur-sm border border-[#1a1a1a] rounded-full px-2.5 py-1 text-[11px] font-medium text-[#4ade80]">
+                  <div className="live-badge absolute top-3 right-3 flex items-center gap-1.5 bg-[#0a0a0a]/80 backdrop-blur-sm border border-[#1a1a1a] rounded-full px-2.5 py-1 text-[11px] font-medium text-[#4ade80]">
                     <span className="live-dot w-1.5 h-1.5 rounded-full bg-[#4ade80] inline-block" />
                     LIVE
                   </div>
