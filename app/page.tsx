@@ -6,7 +6,7 @@ import Hero from '@/components/Hero';
 import TechMarquee from '@/components/TechMarquee';
 import ProjectGrid from '@/components/ProjectGrid';
 import GithubActivity from '@/components/GithubActivity';
-import Blogs from '@/components/Blogs';
+import Achievements from '@/components/Achievements';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -128,7 +128,7 @@ export default function HomePage() {
           <GithubActivity />
 
           <hr className="section-divider" />
-          <Blogs />
+          <Achievements />
 
           <hr className="section-divider" />
           <Contact />

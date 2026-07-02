@@ -203,3 +203,108 @@ main {
   transition: width 0.3s ease;
 }
 .blog-link:hover::after { width: 100%; }
+/* ─── Project card shine-border ──────────────────── */
+.project-card-wrap {
+  position: relative;
+  border-radius: 0.75rem;
+  padding: 1px;
+  background: #1a1a1a;
+}
+
+.project-card-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: inherit;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 0%,
+    transparent 35%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 65%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.project-card-wrap:hover::before {
+  opacity: 1;
+  animation: spin-border 2.4s linear infinite;
+}
+
+.project-card-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: calc(0.75rem - 1px);
+  background: #111111;
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+/* ─── Achievement card shine-border ─────────────── */
+@keyframes spin-border {
+  to { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.achievement-card-wrap {
+  position: relative;
+  border-radius: 0.75rem;
+  padding: 1px;               /* the "border" thickness */
+  background: #1a1a1a;        /* fallback / idle border colour */
+  transition: background 0.3s ease;
+}
+
+/* The rotating shine layer — only visible on hover */
+.achievement-card-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: inherit;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 0%,
+    transparent 35%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 65%,
+    transparent 100%
+  );
+  /* mask so only the 1px ring is visible, not the fill */
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.achievement-card-wrap:hover::before {
+  opacity: 1;
+  animation: spin-border 2.4s linear infinite;
+}
+
+/* The actual card sits inside, filling the wrapper minus the 1px gap */
+.achievement-card-inner {
+  position: relative;
+  z-index: 1;
+  border-radius: calc(0.75rem - 1px);
+  background: #0d0d0d;
+  transition: background 0.2s ease;
+}
+
+.achievement-card-wrap:hover .achievement-card-inner {
+  background: #111111;
+}
